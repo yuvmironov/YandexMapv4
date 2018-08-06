@@ -7,6 +7,52 @@
 	filter saturate(0.5) contrast(95%) brightness(105%)
 }
 
+.Tabs
+	margin-top: 26px
+	&-Links
+		display: flex
+		margin-left: 25px
+	&-Link
+		color: #bdbdbd
+		font-family: 'Rubik', san-serif, serif
+		font-size: 18px
+		font-weight: 400
+		text-decoration: none;
+		&:not(:last-child)
+			margin-right: 30px
+		&:focus
+			color: #333
+		&_Active
+			color: #333333
+			&:after
+				background-color: #d64b4b
+				display: block
+				position: relative
+				top: 0
+				left: 0
+				width: 100%
+				height: 2px
+				content: ''
+		&_NotActive
+			&:after
+				background-color: transparent
+				display: block
+				position: relative
+				top: 100%
+				left: 0
+				width: 100%
+				height: 2px
+				content: ''
+	&-Block
+		padding-left: 25px
+
+		padding-bottom: 15px
+		&_Active
+			display: block
+		&_NotActive
+			display: none
+
+
 .MapWrap
 	display flex
 	justify-content space-between
@@ -17,6 +63,8 @@
 	width 40%
 #DescMap
 	width 60%
+#ContactTabs
+	width: 100%
 
 .DescMap
 	&-BredCrambsLink
@@ -32,12 +80,13 @@
 				padding-left: 5px;
 				padding-right: 5px;
 	&-Header
-		height: 80px
-		background-color: #F2F2F2
+		height: auto;
+		background-color: #f2f2f2;
 		display: flex;
 		align-items: center;
-		padding: 0 25px;
+		flex-wrap: wrap;
 		justify-content: space-between;
+		padding: 50px 25px;
 	&-City
 		height: 100%
 		display: flex;
@@ -63,3 +112,66 @@
 			position: absolute;
 			width: 18px;
 			height: 18px;
+
+.Contacts
+	&-Name
+		font-family: Roboto;
+		font-size: 18px;
+		text-decoration-line: underline;
+		color: #C62828;
+		margin-bottom: 5px
+		margin-top: 25px
+	&-Address
+		font-family: Roboto;
+		font-size: 14px;
+		color: #4F4F4F;
+		margin-bottom: 10px
+	&-Info
+		display flex
+	&-InfoInner
+		font-family: Roboto;
+		font-size: 11px;
+		color: #BDBDBD;
+		margin-right: 50px
+	&-Schedule, &-Phone
+		font-family: Roboto;
+		font-size: 11px;
+		color: #4F4F4F;
+	&-Partner
+		display: flex
+		align-items center
+		padding-top: 25px
+		padding-bottom: 25px;
+		&:nth-child(odd)
+			background-color: #FBFBFB
+	&-PartnerLogo
+		width 175px
+		margin-right: 38px
+	&-PartnerName
+		font-family: Roboto;
+		font-size: 18px;
+		text-decoration-line: underline;
+		color: #C62828;
+		margin-bottom: 5 pox
+	&-PartnerAddress
+		font-family: Roboto;
+		font-size: 14px;
+		color: #4F4F4F;
+		margin-bottom: 10px
+	&-PartnerInfoWrap
+		display flex
+		margin-bottom: 10px
+	&-PartnerPhone, &-PartnerSchedule
+		margin-right: 50px
+		font-family: Roboto;
+		font-size: 11px;
+		color: #BDBDBD;
+	&-PartnerPhoneItem, &-PartnerScheduleItem
+		font-family: Roboto;
+		font-size: 11px;
+		color: #4F4F4F;
+	&-PartnerLink
+		font-family: Roboto;
+		font-size: 11px;
+		text-decoration-line: underline;
+		color: #D64B4B;

@@ -1,4 +1,4 @@
-# Карты Яндекса вариант 4
+# Карты Яндекса ver 1.0
 ## Данные по всем возможнвм адресам с партнерами 
 Работа через API
 ## Для начала работы
@@ -7,8 +7,8 @@
 3. Файл `libs/Accordeon/MFSAccordeon.css` переименовать в `libs/Accordeon/MFSAccordeon.styl`
 4. Файл `libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css` переименовать
  в `libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.styl`
-4. Запустить в консоли команду `gulp` 
-5. Запустить в браузере файл `index.html` из папки `relise`
+5. Запустить в консоли команду `gulp` 
+6. Запустить в браузере файл `index.html` из папки `relise`
 
 ## Описание рабочих файлов
 1. `index.pug` - Файл с шаблоном 

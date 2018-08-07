@@ -156,7 +156,7 @@ function createTabLink(data, map, number) {
  * @param collect - коллекция для добавления на карту и показа при выбранном табе
  */
 function createTabBlock(data, block, collect) {
-	const name = createElementSingleClass('p', 'Contacts-Name', data.name);
+	const name = createLink('Contacts-Name', '#', data.name)
 	const address = createElementSingleClass('p', 'Contacts-Address', data.adress);
 	
 	/** --- Блок для информации --- **/
@@ -276,7 +276,7 @@ function createTabBlockPartner(data, blocks, collect) {
 		partner.appendChild(logo);
 		
 		const partnerInfo = createElementSingleClass('div', 'Contacts-PartnerInfo');
-		const name = createElementSingleClass('p', 'Contacts-PartnerName', data[i].brandName);
+		const name = createLink('Contacts-PartnerName','#', data[i].brandName);
 		
 		const phoneSchedule = createElementSingleClass('div', 'Contacts-PartnerInfoWrap');
 		const phone = createElementSingleClass('p', 'Contacts-PartnerPhone', 'Телефон');

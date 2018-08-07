@@ -184,6 +184,7 @@ function createTabBlock(data, block, collect) {
 	for (let i = 0; i < coordinates.length; i++) {
 		coordinates[i] = Number(coordinates[i]);
 	}
+	//Создаем метку для добавления на карту
 	let placeMarc = new ymaps.Placemark(
 		coordinates,
 		{
@@ -200,16 +201,19 @@ function createTabBlock(data, block, collect) {
 			hideIconOnBalloonOpen: false
 		}
 	);
-	
+	//Добавляем метку в коллекцию
 	collect.add(placeMarc);
 	
+	//При наведении курсора мыши на название открываем балун метки
 	name.addEventListener('mouseenter', function () {
 		placeMarc.balloon.open();
 	});
+	//При снятия курсора мыши с название закрываем балун метки
 	name.addEventListener('mouseleave', function () {
 		placeMarc.balloon.close();
 	});
 	
+	//Собираем все аоедино
 	block.appendChild(name);
 	block.appendChild(address);
 	block.appendChild(infoWrap);
@@ -217,8 +221,14 @@ function createTabBlock(data, block, collect) {
 	
 }
 
-
+/**
+ * Функция для создания ссылок на магазины партнеров
+ * @param data - данные для вставки
+ * @param map - линк на карту, куда добаляем коллекцию
+ * @param number - порядковый номер
+ */
 function createTabLinkPartner(data, map, number) {
+	
 	let collection = new ymaps.GeoObjectCollection(null, {});
 	let tabsLinksBlock = document.querySelector('.Tabs-Links');
 	const tabsBlocks = document.querySelector('.Tabs-Contents');
@@ -252,8 +262,13 @@ function createTabLinkPartner(data, map, number) {
 	});
 }
 
+/**
+ * Фукция для добавления меток на карту всех магазинов партнеров
+ * @param data - данные для вставки
+ * @param blocks - указание куда добавлять данные для описания
+ * @param collect - ссылка на коллекцию добавления
+ */
 function createTabBlockPartner(data, blocks, collect) {
-	console.log('data ', data);
 	for (let i = 0; i < data.length; i++) {
 		const partner = createElementSingleClass('div', 'Contacts-Partner');
 		const logo = createElementSingleClass('img', 'Contacts-PartnerLogo');
